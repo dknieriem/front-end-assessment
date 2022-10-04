@@ -10,6 +10,34 @@ title: Page
     <title>{{ title }}</title>
   </head>
   <body>
-    {{ content | safe }}
+    <section class="page-wrapper">
+      <div class="page-header">
+        <div class="logo-container">
+          {{ '/_includes/img/new-relic.svg' | svgContents | safe }}
+        </div>
+        <nav class="main">
+          <a class="nav-item" href="#"></a>
+          <a class="nav-item" href="#"></a>
+          <a class="nav-item" href="#"></a>
+          <a class="nav-item" href="#"></a>
+        </nav>
+        <nav class="contextual">
+          <a class="nav-item" href="#">Log In</a>
+          <a class="nav-item button" href="#">Sign Up</a>
+        </nav>
+        <nav class="hamburger">
+          <a class="hamburger-switch"></a>
+          <div class="hamburger_menu">
+            <a class="hamburger-item" href="#"></a>
+            <a class="hamburger-item" href="#"></a>
+            <a class="hamburger-item" href="#"></a>
+            <a class="hamburger-item" href="#"></a>
+          </div>
+        </nav>
+      </div>
+      <div class="page-content">
+        {{ content | safe }}
+      </div>
+    </section>
   </body>
 </html>

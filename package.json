@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^1.0.2",
+    "eleventy-plugin-svg-contents": "^0.7.0",
+    "gulp": "^4.0.2",
+    "node-sass": "^7.0.3"
   }
 }
