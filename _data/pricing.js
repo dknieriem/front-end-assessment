@@ -52,11 +52,11 @@ module.exports = [
                 "title": "Free",
                 "description": "<ul class='checkmark'><li><strong>1 Free</strong> \
                 Full user<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
-                <span class='popover-content'>Tool-tip text: Free</span></span> \
+                <span class='popover-content'><span class='popover-text'>Tool-tip text: Free</span></span></span><br> \
                 for all use cases</li><li>Unlimited <strong>free</strong> basic \
                 users<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
-                <span class='popover-content'>Tool-tip text: basic users</span> \
-                </span> for queries and custom dashboards</li></ul>",
+                <span class='popover-content'><span class='popover-text'>Tool-tip text: basic users</span> \
+                </span></span><br> for queries and custom dashboards</li></ul>",
                 "button": "",
                 "button_link": "",
                 "button_style": "",
@@ -67,16 +67,16 @@ module.exports = [
                 "title": "Standard",
                 "description": "<ul class='checkmark'><li><strong>$99/ month</strong> \
                 Per full user<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
-                <span class='popover-content'>Tool-tip text: Free</span></span> \
+                <span class='popover-content'><span class='popover-text'>Tool-tip text: Free</span></span<br> \
                 </li><li>Unlimited <strong>free</strong> basic users<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
-                <span class='popover-content'>Tool-tip text: Free</span></span></li></ul>"
+                <span class='popover-content'><span class='popover-text'>Tool-tip text: Free</span></span></span><br></li></ul>"
             },
             {
                 "color": "green",
                 "image": "",
                 "title": "Pro",
                 "description": "<ul class='checkmark'><li><strong>$349/ month</strong> Per full user<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
-                <span class='popover-content'>Tool-tip text: Free</span></span></li><li>Unlimited <strong>free</strong> basic users<popover data-text='popover text'></li><li>Advanced troubleshooting & admin capacities</li></ul>",
+                <span class='popover-content'><span class='popover-text'>Tool-tip text: Free</span></span></span><br></li><li>Unlimited <strong>free</strong> basic users<popover data-text='popover text'></li><li>Advanced troubleshooting & admin capacities</li></ul>",
                 "button": "",
                 "button_link": "",
                 "button_style": "",

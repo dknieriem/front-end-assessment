@@ -1,7 +1,9 @@
 {%- macro popover(params) -%}
 <span class="popover"><img src='/_includes/img/tool-tip.svg' />
     <span class="popover-content">
-       {{ content }}
+       <span class="popover-text">
+        {{ params.content }}
+        </span>
     </span>
 </span>
 {% endmacro %}

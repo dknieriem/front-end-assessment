@@ -1,4 +1,4 @@
-body {
+body, .popover-content .popover-text {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-size: 16px;
@@ -35,6 +35,22 @@ h3 {
   text-align: left;
 }
 
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+a {
+  color: #00838F;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
 .page-wrapper {
   background-color: #FAF9F9;
 }
@@ -44,6 +60,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 160px;
 }
 
 .page-header {
@@ -53,6 +70,7 @@ h3 {
   padding-right: 24px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 100%;
   max-width: 1128px;
 }
@@ -72,14 +90,33 @@ h3 {
   }
 }
 
+.logo-container {
+  height: 31px;
+}
+
 nav.main {
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 12%;
 }
 @media screen and (max-width:768px) {
   nav.main {
     display: none;
   }
 }
+nav.main .nav-item:not(:last-child) {
+  margin-right: 24px;
+}
+
+nav.contextual {
+  display: flex;
+  align-items: center;
+}
+nav.contextual .nav-item:not(:last-child) {
+  margin-right: 16px;
+}
+
 nav.hamburger {
   display: none;
 }
@@ -107,6 +144,7 @@ nav.hamburger .hamburger-item {
   background-color: #FFFFFF;
   width: 100%;
   max-width: 1128px;
+  margin-bottom: 24px;
 }
 
 .content-heading {
@@ -119,6 +157,7 @@ nav.hamburger .hamburger-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -154px;
 }
 
 .page-content {
@@ -159,28 +198,131 @@ nav.hamburger .hamburger-item {
 
 .card-header {
   border-radius: 8px 8px 0px 0px;
-  height: 154px;
+  height: 7px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
 }
 @media screen and (max-width:768px) {
   .card-header {
+    height: unset;
+  }
+}
+.card-header.has-image {
+  height: 154px;
+  justify-content: center;
+}
+@media screen and (max-width:768px) {
+  .card-header.has-image {
     height: 144px;
   }
 }
 .card-header.color-teal {
   background-color: #0AB0BF;
 }
+.card-header.color-teal h4 {
+  color: #FFFFFF;
+}
 .card-header.color-blue {
   background-color: #0069CE;
+}
+.card-header.color-blue h4 {
+  color: #FFFFFF;
 }
 .card-header.color-green {
   background-color: #66E6AB;
 }
+.card-header.color-green h4 {
+  color: #FFFFFF;
+}
 .card-header.color-charcoal {
   background-color: #2C2C2C;
+}
+.card-header.color-charcoal h4 {
+  color: #FFFFFF;
+}
+.card-header h4 {
+  display: none;
+}
+@media screen and (max-width:768px) {
+  .card-header h4 {
+    display: block;
+    margin: 14px 0 18px 32px;
+  }
+}
+.card-body {
+  padding: 32px 32px 44px;
+}
+
+.card-footer {
+  padding: 32px;
+}
+
+.card-disclaimer {
+  color: #54565A;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+}
+
+.popover {
+  line-height: 16px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+h3 > .popover {
+  line-height: 24px;
+}
+
+.popover-content {
+  display: none;
+  background-color: #FFFFFF;
+  border: 1px solid #CBCFCF;
+  box-shadow: 0px 4px 30px rgba(84, 86, 90, 0.1);
+  border-radius: 8px;
+  width: 240px;
+  padding: 16px;
+}
+.popover.active > .popover-content {
+  display: block;
+  position: absolute;
+}
+ul.checkmark {
+  padding-left: 23px;
+}
+ul.checkmark li {
+  list-style-image: url(/_includes/img/tick.svg);
+}
+ul.text-bubble {
+  padding-left: 22px;
+}
+ul.text-bubble li {
+  list-style-image: url(/_includes/img/chat-bubble.svg);
+}
+
+.button {
+  display: block;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #00838F;
+  border-radius: 4px;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 32px;
+}
+.button:hover, .button:focus {
+  text-decoration: none;
+  background-color: #00545c;
+}
+.button.ghost {
+  color: #00838F;
+  background-color: unset;
+  border: 1px solid #00838F;
+}
+.button.ghost:hover, .button.ghost:focus {
+  border: 1px solid #00545c;
+  color: #00545c;
 }
 
 /*# sourceMappingURL=styles.css.map */

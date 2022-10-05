@@ -8,8 +8,9 @@ page_heading: Troubleshoot your stack. Not your monitoring bill.
 
 {%- for cardSection in collections.pricing -%}
   <div class="card-section">
-    {%- if cardSection.title -%}<h3>{{ cardSection.title | safe }}</h3>{%- endif -%}
-    {%- if cardSection.popover -%}{{ popover({ content: cardSection.popover })  }}{%- endif -%}
+    {%- if cardSection.title -%}<h3>{{ cardSection.title | safe }}
+      {%- if cardSection.popover -%}{{ popover({ content: cardSection.popover })  }}{%- endif -%}
+    </h3>{%- endif -%}
     {%- if cardSection.subtitle -%}<p>{{ cardSection.subtitle | safe }}</p>{%- endif -%}
     <div class="card-container">
       {%- for cardObject in cardSection.cards -%}
