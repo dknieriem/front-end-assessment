@@ -7,6 +7,7 @@ title: Page
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# load fonts #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
@@ -14,7 +15,9 @@ title: Page
       {% include "_site/css/styles.css" %}
     {% endset %}
     <style>
-      {{ css | cssmin | safe }}
+      {# TODO: switch to cssmin minified version for production #}
+      {{ css | safe }} 
+      {# {{ css | cssmin | safe }} #}
     </style>
     <title>{{ title }}</title>
   </head>

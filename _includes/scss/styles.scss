@@ -151,6 +151,7 @@ nav.main {
     }
 
     .nav-item {
+        color: $nav_link_color;
         &:not(:last-child){
             margin-right: 24px;
         }
@@ -226,7 +227,6 @@ nav.hamburger {
     margin-bottom: 98px;
     
     @media #{$tablet_breakpoint}{
-        width: unset;
         margin-bottom: 88px;
     }
 
@@ -407,6 +407,11 @@ nav.hamburger {
 }
 .card-footer {
     padding: 32px;
+    text-align: center;
+
+    @media #{$tablet_breakpoint}{
+        padding: 32px 32px 24px 32px;
+    }
 }
 .card-included {
     display: none;
@@ -421,7 +426,7 @@ nav.hamburger {
 .card-disclaimer {
     color: $text_disclaimer;
     font-size: 14px;
-    display: block;
+    display: inline-block; //funky when wrapped across lines
     text-align: center;
     margin-top: 10px;
     height: 16px; //force equal height across cards

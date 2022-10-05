@@ -119,6 +119,9 @@ nav.main {
     display: none;
   }
 }
+nav.main .nav-item {
+  color: #54565A;
+}
 nav.main .nav-item:not(:last-child) {
   margin-right: 24px;
 }
@@ -186,7 +189,6 @@ nav.hamburger .hamburger-item {
 }
 @media screen and (max-width:980px) {
   .content-heading-wrapper {
-    width: unset;
     margin-bottom: 88px;
   }
 }
@@ -354,6 +356,12 @@ nav.hamburger .hamburger-item {
 
 .card-footer {
   padding: 32px;
+  text-align: center;
+}
+@media screen and (max-width:980px) {
+  .card-footer {
+    padding: 32px 32px 24px 32px;
+  }
 }
 
 .card-included {
@@ -371,7 +379,7 @@ nav.hamburger .hamburger-item {
 .card-disclaimer {
   color: #54565A;
   font-size: 14px;
-  display: block;
+  display: inline-block;
   text-align: center;
   margin-top: 10px;
   height: 16px;
