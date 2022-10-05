@@ -11,7 +11,7 @@ title: Page
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
-{% set css %}
+    {% set css %}
       {% include "_site/css/styles.css" %}
     {% endset %}
     <style>
@@ -64,6 +64,12 @@ title: Page
         </div>
       </div>
     </section>
-    <script src="/_includes/js/functions.js"></script>
+    {% set js %}
+      {% include "_includes/js/functions.js" %}
+    {% endset %}
+    <script>
+      {{ js | safe }}
+      {# TODO: add terser and minify using {{ js | jsmin | safe }} #}
+    </script>
   </body>
 </html>
