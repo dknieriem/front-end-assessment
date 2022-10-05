@@ -1,24 +1,4 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
-
-    <style>
-      body{font-family:"Open Sans",sans-serif;font-style:normal;font-size:16px;font-weight:400;line-height:28px;letter-spacing:0;text-align:left;color:#2c2c2c}strong{font-weight:700}h1{font-size:60px;font-weight:400;line-height:64px;letter-spacing:-.01em;text-align:left}@media screen and (max-width:480px){h1{font-size:40px;line-height:48px}}h3{font-size:24px;font-weight:600;line-height:32px;letter-spacing:-.5px;text-align:left}.page-wrapper{background-color:#faf9f9}.page-header-wrapper{background-color:#fff;display:flex;flex-direction:column;align-items:center}.page-header{padding-top:25px;padding-bottom:22px;padding-left:24px;padding-right:24px;display:flex;flex-direction:row;width:100%;max-width:1128px}@media screen and (max-width:768px){.page-header{padding-top:16px;padding-bottom:17px;justify-content:space-between}}@media screen and (max-width:480px){.page-header{padding-top:8px;padding-bottom:8px;padding-left:16px;padding-right:16px}}nav.main{flex-grow:1}@media screen and (max-width:768px){nav.main{display:none}}nav.hamburger{display:none}@media screen and (max-width:768px){nav.hamburger{display:inline}}nav.hamburger .hamburger-switch{cursor:pointer}nav.hamburger .hamburger-menu{display:none;position:absolute;top:0}nav.hamburger .hamburger-menu.active{display:block}nav.hamburger .hamburger-item{display:inline-block}.content-heading-wrapper{background-color:#fff;width:100%;max-width:1128px}.content-heading{max-width:745px;margin:0}.page-content-wrapper{width:100%;display:flex;flex-direction:column;align-items:center}.page-content{width:100%;max-width:1128px;display:flex;flex-direction:column;align-items:center}.card-section{width:100%}.card-container{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;column-gap:24px;row-gap:32px}@media screen and (max-width:768px){.card-container{grid-template-columns:1fr 1fr}}@media screen and (max-width:480px){.card-container{grid-template-columns:1fr}}.card{background:#fff;border:1px solid #cbcfcf;box-shadow:0 4px 30px rgba(84,86,90,.1);border-radius:8px}.card-header{border-radius:8px 8px 0 0;height:154px;display:flex;flex-direction:row;justify-content:center;align-items:center}@media screen and (max-width:768px){.card-header{height:144px}}.card-header.color-teal{background-color:#0ab0bf}.card-header.color-blue{background-color:#0069ce}.card-header.color-green{background-color:#66e6ab}.card-header.color-charcoal{background-color:#2c2c2c}
-    </style>
-    <title>Index</title>
-  </head>
-  <body>
-    <section class="page-wrapper">
-      <div class="page-header-wrapper">
-        <div class="page-header">
-          <div class="logo-container">
-            <svg width="171" height="31" viewBox="0 0 171 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="171" height="31" viewBox="0 0 171 31" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M60.3154 23.9532L55.6642 14.2039C54.5538 11.9002 53.4135 9.28314 53.0242 8.05295L52.9343 8.1428C53.0841 9.8821 53.114 12.0729 53.144 13.9021L53.2638 23.9532H49.875V3.19211H53.7752L58.8157 13.3285C59.6605 15.0518 60.3729 16.837 60.9467 18.6685L61.0365 18.5786C60.9467 17.5281 60.737 14.5586 60.737 12.6673L60.6771 3.1875H63.9484V23.9486L60.3154 23.9532Z" fill="black"/>
 <path d="M70.1246 17.2644V17.4947C70.1246 19.5957 70.9055 21.8142 73.875 21.8142C75.2849 21.8142 76.5151 21.3051 77.6554 20.3145L78.9455 22.3256C77.4325 23.6408 75.4903 24.3562 73.4857 24.3368C69.1962 24.3368 66.4962 21.2475 66.4962 16.3867C66.4962 13.7167 67.0652 11.9451 68.3876 10.4454C69.6177 9.0355 71.1175 8.40428 73.0388 8.40428C74.5797 8.35572 76.0777 8.91603 77.2085 9.9639C78.5285 11.1641 79.1897 13.0232 79.1897 16.564V17.2552L70.1246 17.2644ZM73.0342 10.9038C71.1751 10.9038 70.1545 12.3736 70.1545 14.834H75.7641C75.7641 12.3782 74.6859 10.9038 73.0342 10.9038Z" fill="black"/>
 <path d="M96.7469 24.0136H93.6461L91.787 17.0241C91.3078 15.2249 90.7964 12.8774 90.7964 12.8774H90.7365C90.7365 12.8774 90.5061 14.3771 89.7459 17.1669L87.9167 24.0067H84.8252L80.6785 8.9749L83.9497 8.51416L85.5992 15.8653C86.0185 17.7544 86.3802 19.8554 86.3802 19.8554H86.47C86.6912 18.4816 86.9819 17.1199 87.3408 15.7755L89.2921 8.75605H92.5334L94.245 15.6027C94.8763 18.0631 95.2057 19.9222 95.2057 19.9222H95.2955C95.2955 19.9222 95.6549 17.6184 96.0465 15.8423L97.6062 8.76066H101.027L96.7469 24.0136Z" fill="black"/>
@@ -31,44 +11,3 @@
 <path d="M38.1679 11.184C36.4055 3.0864 26.6954 -1.67538 16.4761 0.545398C6.25681 2.76618 -0.596743 11.1333 1.1633 19.2285C2.92333 27.3238 12.6358 32.0902 22.8528 29.8671C33.0697 27.644 39.9279 19.2884 38.1679 11.184ZM19.6667 22.6703C18.1905 22.6703 16.7474 22.2325 15.5199 21.4124C14.2925 20.5922 13.3358 19.4265 12.7709 18.0626C12.2059 16.6987 12.0581 15.198 12.3461 13.7501C12.6341 12.3022 13.345 10.9722 14.3889 9.92837C15.4327 8.88451 16.7627 8.17363 18.2106 7.88563C19.6585 7.59762 21.1592 7.74544 22.5231 8.31037C23.887 8.87531 25.0527 9.83199 25.8729 11.0594C26.693 12.2869 27.1308 13.73 27.1308 15.2062C27.1308 16.1864 26.9377 17.157 26.5626 18.0626C26.1875 18.9682 25.6377 19.791 24.9446 20.4841C24.2515 21.1772 23.4287 21.727 22.5231 22.1021C21.6175 22.4772 20.6469 22.6703 19.6667 22.6703Z" fill="#008C99"/>
 <path d="M21.3163 4.75586C19.1968 4.75632 17.125 5.38524 15.3629 6.5631C13.6008 7.74096 12.2276 9.41487 11.4168 11.3732C10.606 13.3315 10.3941 15.4862 10.8079 17.5649C11.2217 19.6436 12.2425 21.553 13.7414 23.0515C15.2403 24.5501 17.1498 25.5706 19.2287 25.9839C21.3075 26.3972 23.4622 26.1848 25.4203 25.3736C27.3784 24.5624 29.052 23.1888 30.2295 21.4265C31.407 19.6642 32.0355 17.5923 32.0355 15.4727C32.0355 14.0652 31.7582 12.6714 31.2195 11.371C30.6807 10.0707 29.8911 8.88913 28.8957 7.89395C27.9003 6.89876 26.7186 6.10941 25.4181 5.57097C24.1176 5.03253 22.7238 4.75556 21.3163 4.75586ZM19.6645 21.725C18.3751 21.725 17.1146 21.3427 16.0425 20.6263C14.9703 19.9099 14.1347 18.8917 13.6413 17.7004C13.1478 16.5091 13.0187 15.1983 13.2703 13.9336C13.5218 12.669 14.1427 11.5073 15.0545 10.5955C15.9663 9.68375 17.1279 9.06283 18.3926 8.81127C19.6573 8.55971 20.9681 8.68882 22.1594 9.18227C23.3507 9.67572 24.3689 10.5113 25.0853 11.5835C25.8017 12.6556 26.184 13.9161 26.184 15.2055C26.184 16.9342 25.4975 18.5921 24.2753 19.8147C23.0532 21.0373 21.3955 21.7244 19.6668 21.725H19.6645Z" fill="#70CCD3"/>
 </svg>
-          </div>
-          <nav class="main">
-            <a class="nav-item" href="#">Products</a>
-            <a class="nav-item" href="#">Pricing</a>
-            <a class="nav-item" href="#">Solutions</a>
-            <a class="nav-item" href="#">Help Center</a>
-            <a class="nav-item" href="#">About</a>
-          </nav>
-          <nav class="contextual">
-            <a class="nav-item" href="#">Log In</a>
-            <a class="nav-item button" href="#">Sign Up</a>
-          
-            <nav class="hamburger">
-              <a class="hamburger-switch" tabindex="0"><svg width="25" height="17" viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.887695" width="24" height="3" rx="1.5" fill="#54565A"/>
-<rect x="0.887695" y="7" width="24" height="3" rx="1.5" fill="#54565A"/>
-<rect x="0.887695" y="14" width="24" height="3" rx="1.5" fill="#54565A"/>
-</svg></a>
-              <div class="hamburger-menu">
-                <a class="hamburger-item" href="#">Products</a>
-                <a class="hamburger-item" href="#">Pricing</a>
-                <a class="hamburger-item" href="#">Solutions</a>
-                <a class="hamburger-item" href="#">Help Center</a>
-                <a class="hamburger-item" href="#">About</a>
-              </div>
-            </nav>
-          </nav>
-        </div>
-        <div class="content-heading-wrapper">
-          <h1 class="content-heading"></h1>
-        </div>
-      </div>
-      <div class="page-content-wrapper">
-        <div class="page-content">
-          <p>Hi</p>
-        </div>
-      </div>
-    </section>
-    <script src="/_includes/js/functions.js"></script>
-  </body>
-</html>

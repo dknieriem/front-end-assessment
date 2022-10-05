@@ -7,37 +7,57 @@ title: Page
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+{% set css %}
+      {% include "_site/css/styles.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
     <title>{{ title }}</title>
   </head>
   <body>
     <section class="page-wrapper">
-      <div class="page-header">
-        <div class="logo-container">
-          {{ '/_includes/img/new-relic.svg' | svgContents | safe }}
-        </div>
-        <nav class="main">
-          <a class="nav-item" href="#"></a>
-          <a class="nav-item" href="#"></a>
-          <a class="nav-item" href="#"></a>
-          <a class="nav-item" href="#"></a>
-        </nav>
-        <nav class="contextual">
-          <a class="nav-item" href="#">Log In</a>
-          <a class="nav-item button" href="#">Sign Up</a>
-        </nav>
-        <nav class="hamburger">
-          <a class="hamburger-switch"></a>
-          <div class="hamburger_menu">
-            <a class="hamburger-item" href="#"></a>
-            <a class="hamburger-item" href="#"></a>
-            <a class="hamburger-item" href="#"></a>
-            <a class="hamburger-item" href="#"></a>
+      <div class="page-header-wrapper">
+        <div class="page-header">
+          <div class="logo-container">
+            {{ '/_includes/img/new-relic.svg' | svgContents | safe }}
           </div>
-        </nav>
+          <nav class="main">
+            <a class="nav-item" href="#">Products</a>
+            <a class="nav-item" href="#">Pricing</a>
+            <a class="nav-item" href="#">Solutions</a>
+            <a class="nav-item" href="#">Help Center</a>
+            <a class="nav-item" href="#">About</a>
+          </nav>
+          <nav class="contextual">
+            <a class="nav-item" href="#">Log In</a>
+            <a class="nav-item button" href="#">Sign Up</a>
+          
+            <nav class="hamburger">
+              <a class="hamburger-switch" tabindex="0">{{ '/_includes/img/nav-burger.svg' | svgContents | safe }}</a>
+              <div class="hamburger-menu">
+                <a class="hamburger-item" href="#">Products</a>
+                <a class="hamburger-item" href="#">Pricing</a>
+                <a class="hamburger-item" href="#">Solutions</a>
+                <a class="hamburger-item" href="#">Help Center</a>
+                <a class="hamburger-item" href="#">About</a>
+              </div>
+            </nav>
+          </nav>
+        </div>
+        <div class="content-heading-wrapper">
+          <h1 class="content-heading">{{ page_heading }}</h1>
+        </div>
       </div>
-      <div class="page-content">
-        {{ content | safe }}
+      <div class="page-content-wrapper">
+        <div class="page-content">
+          {{ content | safe }}
+        </div>
       </div>
     </section>
+    <script src="/_includes/js/functions.js"></script>
   </body>
 </html>

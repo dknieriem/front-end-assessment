@@ -1,9 +1,23 @@
 const svgContents = require("eleventy-plugin-svg-contents");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const CleanCSS = require("clean-css");
+
+const EleventyPlugin = require("@11ty/eleventy/src/Plugins/RenderPlugin");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(svgContents);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
 
 
+  eleventyConfig.setBrowserSyncConfig({
+		files: './_site/css/*.css'
+	});
 
+  eleventyConfig.addPassthroughCopy("_includes/js");
+  eleventyConfig.addPassthroughCopy("_includes/img");
 // Create collection from _data/pricing.js
 //module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("pricing", (collection) => {
@@ -13,30 +27,4 @@ module.exports = function(eleventyConfig) {
   });
 //};
 
-//add popover shortcode
-//module.exports = function(eleventyConfig) {
-  eleventyConfig.addShortcode("popover", 
-  function(content) {
-    return `<span class="popover">${ "{{ '/_includes/img/tool-tip.svg' | svgContents | safe }}" }
-      <span class="popover-content">
-       {{ content }}
-      </span>
-     </span>`;
-  });
-//}
-
-//add card shortcode
-//module.exports = function(eleventyConfig) {
-  eleventyConfig.addShortcode("card", 
-  function(color,image,title,description,button,button_link,button_style, disclaimer) {
-    return `<div class="card">
-      <div class="card-header {% if color %}color-${color}{% endif %}">
-        <img src="${image}">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">${title}</h3>
-        ${description}
-      </div>
-    </div>`;
-  });
 }

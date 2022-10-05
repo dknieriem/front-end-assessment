@@ -3,7 +3,7 @@ module.exports = [
         "cards": [
             {
                 "color": "teal",
-                "image": "swirls.svg",
+                "image": "/_includes/img/swirls.svg",
                 "title": "Free (Forever)",
                 "description": "Start using New Relic with all the features you need for free.",
                 "button": "Start now",
@@ -13,7 +13,7 @@ module.exports = [
             },
             {
                 "color": "blue",
-                "image": "",
+                "image": "/_includes/img/fist-bump.svg",
                 "title": "Standard?",
                 "description": "Operationalize New Relic in your team with up to 5 people.",
                 "button": "Start now",
@@ -22,7 +22,8 @@ module.exports = [
                 "disclaimer": "No credit card required",
             },
             {
-                "image": "",
+                "color": "green",
+                "image": "/_includes/img/people.svg",
                 "title": "Pro",
                 "description": "For teams <strong>greater than 5 people</strong> and advanced troubleshooting.",
                 "button": "Talk to sales",
@@ -30,7 +31,8 @@ module.exports = [
                 "button_style": "ghost",
             },
             {
-                "image": "",
+                "color": "charcoal",
+                "image": "/_includes/img/building.svg",
                 "title": "Enterprise",
                 "description": "Enterprise-level security, support, and compliance.",
                 "button": "Talk to sales",
@@ -46,19 +48,47 @@ module.exports = [
         "cards": [
             {
                 "color": "teal",
-                "content": "<ul class='checkmark'><li><strong>1 Free</strong> Full user<popover data-text='popover text'> for all use cases</li><li>Unlimited <strong>free</strong> basic users<popover data-text='popover text'> for queries and custom dashboards</li></ul>"
+                "image": "",
+                "title": "Free",
+                "description": "<ul class='checkmark'><li><strong>1 Free</strong> \
+                Full user<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
+                <span class='popover-content'>Tool-tip text: Free</span></span> \
+                for all use cases</li><li>Unlimited <strong>free</strong> basic \
+                users<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
+                <span class='popover-content'>Tool-tip text: basic users</span> \
+                </span> for queries and custom dashboards</li></ul>",
+                "button": "",
+                "button_link": "",
+                "button_style": "",
             },
             {
                 "color": "blue",
-                "content": "<ul class='checkmark'><li><strong>$99/ month</strong> Per full user<popover data-text='popover text'></li><li>Unlimited <strong>free</strong> basic users<popover data-text='popover text'></li></ul>"
+                "image": "",
+                "title": "Standard",
+                "description": "<ul class='checkmark'><li><strong>$99/ month</strong> \
+                Per full user<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
+                <span class='popover-content'>Tool-tip text: Free</span></span> \
+                </li><li>Unlimited <strong>free</strong> basic users<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
+                <span class='popover-content'>Tool-tip text: Free</span></span></li></ul>"
             },
             {
                 "color": "green",
-                "content": "<ul class='checkmark'><li><strong>$349/ month</strong> Per full user<popover data-text='popover text'></li><li>Unlimited <strong>free</strong> basic users<popover data-text='popover text'></li><li>Advanced troubleshooting & admin capacities</li></ul>"
+                "image": "",
+                "title": "Pro",
+                "description": "<ul class='checkmark'><li><strong>$349/ month</strong> Per full user<span class='popover'><img src='/_includes/img/tool-tip.svg' /> \
+                <span class='popover-content'>Tool-tip text: Free</span></span></li><li>Unlimited <strong>free</strong> basic users<popover data-text='popover text'></li><li>Advanced troubleshooting & admin capacities</li></ul>",
+                "button": "",
+                "button_link": "",
+                "button_style": "",
             },
             {
-                "color": "black",
-                "content": "<ul class='text-bubble'><li><strong>Contact us for more details</strong>"
+                "color": "charcoal",
+                "image": "",
+                "title": "Enterprise",
+                "description": "<ul class='text-bubble'><li><strong>Contact us for more details</strong>",
+                "button": "",
+                "button_link": "",
+                "button_style": "",
             }
         ]
     }

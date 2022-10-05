@@ -1,0 +1,239 @@
+// Variables
+
+// Root colors
+$teal: #0AB0BF;
+$blue: #0069CE;
+$bright_green: #66E6AB;
+$charcoal: #2C2C2C;
+$dark_teal: #00838F;
+$white: #FFFFFF;
+$medium_grey: #54565A;
+$light_grey: #E5E5E5;
+$bg_grey: #FAF9F9;
+
+//Theme colors
+$background: $bg_grey;
+$page_title_bg: $light_grey;
+$nav_link_color: $medium_grey;
+$primary: $dark_teal;
+$text: $charcoal;
+
+// Layout Variables
+$mobile_breakpoint: 'screen and (max-width:480px)';
+$tablet_breakpoint: 'screen and (max-width:768px)';
+
+
+$content_width_desktop: 1128px;
+$content_gutter_tablet: 62px;
+$content_gutter_mobile: 40px;
+
+
+// Typography
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: $text;
+}
+
+strong { font-weight : 700; }
+
+h1 {
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    @media #{$mobile_breakpoint}{
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    text-align: left;
+}
+
+// Layout Styles
+.page-wrapper {
+    background-color: $bg_grey;
+}
+
+// Header
+.page-header-wrapper {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-header {
+    padding-top: 25px;
+    padding-bottom: 22px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: $content_width_desktop;
+
+    
+    @media #{$tablet_breakpoint}{
+        padding-top: 16px;
+        padding-bottom: 17px;
+        justify-content: space-between;
+    }
+
+    @media #{$mobile_breakpoint}{
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+}
+.logo-container {
+
+}
+
+nav.main {
+
+    flex-grow: 1;
+
+    @media #{$tablet_breakpoint}{
+        display: none;
+    }
+
+    .nav-item {
+
+    }
+}
+
+nav.contextual {
+
+    .nav-item {
+
+    }
+}
+
+nav.hamburger {
+    display: none;
+
+    @media #{$tablet_breakpoint}{
+        display: inline;
+    }
+    .hamburger-switch {
+        cursor: pointer;
+
+    }
+    .hamburger-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+
+        &.active {
+            display: block;
+        }
+    }
+    .hamburger-item {
+        display: inline-block;
+    }
+}
+
+
+.content-heading-wrapper {
+    background-color: $white;
+    width: 100%;
+    max-width: $content_width_desktop;
+}
+.content-heading {
+    max-width: 745px;
+    margin: 0;
+}
+
+// Content
+.page-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-content {
+    width: 100%;
+    max-width: $content_width_desktop;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+// Cards
+
+.card-section {
+    width: 100%;
+
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 32px;
+
+    @media #{$tablet_breakpoint}{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    @media #{$mobile_breakpoint}{
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: #FFFFFF;
+    border: 1px solid #CBCFCF;
+    box-shadow: 0px 4px 30px rgba(84, 86, 90, 0.1);
+    border-radius: 8px;
+}
+
+.card-header {
+    border-radius: 8px 8px 0px 0px;
+    height: 154px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$tablet_breakpoint}{
+        height: 144px;
+    }
+    
+    // @media #{$mobile_breakpoint}{
+    //     height: 295px;
+    // }
+
+    &.color-teal {
+        background-color: $teal;
+    }
+
+    &.color-blue {
+        background-color: $blue;
+    }
+    &.color-green {
+        background-color: $bright_green;
+    }
+    &.color-charcoal {
+        background-color: $charcoal;
+    }
+
+    svg { }
+}

@@ -1,0 +1,26 @@
+---
+title:
+color:
+image:
+description:
+button:
+button_link:
+button_style: 
+---
+{%- macro card(params) -%}
+<div class="card">
+    <div class="card-header {% if params.color %}color-{{params.color}}{% endif %}">
+        {% if params.image != "" %}{{ params.image | svgContents | safe }}{% endif %}
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">{{ params.title }}</h3>
+        {{ params.description | safe }}
+        {# {% renderTemplate "nunjucks" %}{{ params.description }}{% endrenderTemplate %} #}
+    </div>
+    <div class="card-footer">
+        {% if params.button %}
+            <a href="{{ params.button_link }}" class="{{ params.button_style }}">{{ params.button }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

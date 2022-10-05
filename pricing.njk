@@ -1,16 +1,20 @@
 ---
 layout: layout.njk
 title: Pricing
+page_heading: Troubleshoot your stack. Not your monitoring bill. 
 ---
+{%- from 'card.macro.njk' import card %}
+{%- from 'popover.macro.njk' import popover %}
+
 {%- for cardSection in collections.pricing -%}
   <div class="card-section">
-    {%- if cardSection.title -%}<h2>{{ cardSection.title | safe }}</h2>{%- endif -%}
-    {%- if cardSection.popover -%}{% popover cardSection.popover %}{%- endif -%}
+    {%- if cardSection.title -%}<h3>{{ cardSection.title | safe }}</h3>{%- endif -%}
+    {%- if cardSection.popover -%}{{ popover({ content: cardSection.popover })  }}{%- endif -%}
     {%- if cardSection.subtitle -%}<p>{{ cardSection.subtitle | safe }}</p>{%- endif -%}
     <div class="card-container">
       {%- for cardObject in cardSection.cards -%}
-      {% card cardObject.color,cardObject.image,cardObject.title,cardObject.description,
-        cardObject.button,cardObject.button_link,cardObject.button_style, cardObject.disclaimer %}
+      {{ card({ color: cardObject.color, image: cardObject.image, title: cardObject.title, description: cardObject.description,
+        button: cardObject.button, button_link: cardObject.button_link, button_style: cardObject.button_style, disclaimer: cardObject.disclaimer  }) }}
       {%- endfor -%}      
     </div>
   </div>
