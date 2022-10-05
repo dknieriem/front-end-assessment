@@ -1,16 +1,8 @@
----
-title:
-color:
-image:
-description:
-button:
-button_link:
-button_style: 
----
+
 {%- macro card(params) -%}
-<div class="card">
-    <div class="card-header {% if params.color %}color-{{params.color}}{% endif %}
-    {% if params.image != '' %}has-image{% endif %}">
+{%- from 'popover.macro.njk' import popover %}
+<div class="card{% if params.image != '' %} has-image{% endif %}">
+    <div class="card-header {% if params.color %}color-{{params.color}}{% endif %}">
         {% if params.image != "" %}
             {{ params.image | svgContents | safe }}
         {% else %}
@@ -18,17 +10,26 @@ button_style:
         {% endif %}
     </div>
     <div class="card-body">
+            {%- if params.section_title -%}<h3 class="borrowed-title">{{ params.section_title | safe }}
+      {%- if params.section_popover -%}{{ popover({ content: params.section_popover })  }}{%- endif -%}
+    </h3>{%- endif -%}
+
         {% if params.image != "" %}<h3 class="card-title">{{ params.title }}</h3>{% endif %}
         {{ params.description | safe }}
         {# {% renderTemplate "nunjucks" %}{{ params.description }}{% endrenderTemplate %} #}
     </div>
+    {% if params.button or params.included_link or params.disclaimer %}
     <div class="card-footer">
         {% if params.button %}
             <a href="{{ params.button_link }}" class="button {{ params.button_style }}">{{ params.button }}</a>
         {% endif %}
-        {% if params.disclaimer %}
-            <span class="card-disclaimer">{{ params.disclaimer }}</span>
-        {% endif %}
+        <span class="card-included">
+            {% if params.included_link %}<a href="#">{{ params.included_link}}</a>{% endif %}
+            </span>
+        <span class="card-disclaimer">
+            {% if params.disclaimer %}{{ params.disclaimer }}{% endif %}
+        </span>
     </div>
+    {% endif %}
 </div>
 {% endmacro %}

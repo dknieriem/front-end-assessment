@@ -25,11 +25,11 @@ $font_size_body: 16px;
 
 // Layout Variables
 $mobile_breakpoint: 'screen and (max-width:480px)';
-$tablet_breakpoint: 'screen and (max-width:768px)';
+$tablet_breakpoint: 'screen and (max-width:980px)';
 
 
 $content_width_desktop: 1128px;
-$content_gutter_tablet: 62px;
+$content_gutter_tablet: 60px;
 $content_gutter_mobile: 40px;
 
 
@@ -86,6 +86,9 @@ a {
 }
 
 // Layout Styles
+body {
+    margin: 0;
+}
 .page-wrapper {
     background-color: $bg_grey;
 }
@@ -96,7 +99,11 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 160px;
+    padding: 0 60px 160px;
+
+    @media #{$mobile_breakpoint}{
+        padding: 0 16px 160px;
+    }
 }
 .page-header {
     padding-top: 25px;
@@ -109,7 +116,6 @@ a {
     width: 100%;
     max-width: $content_width_desktop;
 
-    
     @media #{$tablet_breakpoint}{
         padding-top: 16px;
         padding-bottom: 17px;
@@ -127,14 +133,18 @@ a {
 }
 .logo-container {
     height: 31px;
+
+    @media #{$mobile_breakpoint}{
+        height: 18px;
+    }
 }
 
 nav.main {
 
-    flex-grow: 1; //inside parent .page-header
     display: flex;
     align-items: center;
-    margin-left: 12%; //118px at 1440
+    margin-left: auto;
+    margin-right: auto;
 
     @media #{$tablet_breakpoint}{
         display: none;
@@ -156,6 +166,10 @@ nav.contextual {
             margin-right: 16px;
         }
     }
+
+    .button.mobile {
+        padding: 8px 16px;
+    }
 }
 
 nav.hamburger {
@@ -170,15 +184,36 @@ nav.hamburger {
     }
     .hamburger-menu {
         display: none;
-        position: absolute;
+        position: fixed;//always at the top of the window
         top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh; //full-screen
+        background-color: rgba($white, 0.8);
 
         &.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
+        }
+        //the switch inside the menu
+        .hamburger-switch {
+            cursor: pointer;
+            position:absolute;
+            right: 10px;
+            top: 10px;
+            color: $charcoal;
+            font-size: 32px;
         }
     }
     .hamburger-item {
+        background-color: $white;
         display: inline-block;
+        border-bottom: 1px solid $border_grey;
+        padding: 16px 32px;
+        font-size: 24px;
+        font-weight: 600;
+        color: $charcoal;
     }
 }
 
@@ -187,11 +222,26 @@ nav.hamburger {
     background-color: $white;
     width: 100%;
     max-width: $content_width_desktop;
-    margin-bottom: 24px;
+    margin-top: 58px;
+    margin-bottom: 98px;
+    
+    @media #{$tablet_breakpoint}{
+        width: unset;
+        margin-bottom: 88px;
+    }
+
+    @media #{$mobile_breakpoint}{
+        margin-left: 24px; //align with content 40px margin
+    }
 }
 .content-heading {
-    max-width: 745px;
-    margin: 0;
+    width: 100%;
+
+    h1 {
+        max-width: 745px;
+        margin: 0;
+    }
+   
 }
 
 // Content
@@ -200,14 +250,30 @@ nav.hamburger {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -154px;
+    margin-top: -154px; //line up card headers with background change
+
+    @media #{$tablet_breakpoint}{
+        margin-top: -145px; //line up card headers with background change
+    }
 }
 .page-content {
-    width: 100%;
+    //width: 100%;
     max-width: $content_width_desktop;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 $content_gutter_tablet;
+    margin-bottom: 200px;
+
+    @media #{$tablet_breakpoint}{
+        width: unset;
+        
+    }
+
+    
+    @media #{$mobile_breakpoint}{
+        padding: 0 $content_gutter_mobile;
+    }
 }
 
 
@@ -215,9 +281,13 @@ nav.hamburger {
 
 .card-section {
     width: 100%;
-
 }
 
+.section-title {
+    @media #{$mobile_breakpoint}{
+        display: none;
+    }
+}
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -238,6 +308,24 @@ nav.hamburger {
     border: 1px solid $border_grey;
     box-shadow: 0px 4px 30px rgba(84, 86, 90, 0.1);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+
+       //Special case for mobile card w/ no image - break container width 
+       @media #{$mobile_breakpoint}{
+        &:not(.has-image){
+            border: none;
+            box-shadow: none;
+            background: none;
+
+            margin-left: -40px;
+            margin-right: -40px;
+
+            .card-header {
+                border-radius: 0;
+            }
+        }
+    }
 }
 
 .card-header {
@@ -253,7 +341,7 @@ nav.hamburger {
         
     }
 
-    &.has-image {
+    .card.has-image > & {
         height: 154px;
         justify-content: center;
 
@@ -261,10 +349,8 @@ nav.hamburger {
             height: 144px;
         }
     }
-    
-    // @media #{$mobile_breakpoint}{
-    //     height: 295px;
-    // }
+
+
 
     &.color-teal {
         background-color: $teal;
@@ -311,17 +397,34 @@ nav.hamburger {
 
 .card-body {
     padding: 32px 32px 44px;
+    flex-grow: 1; //inside .card
 }
-
+.borrowed-title {
+    display: none;
+    @media #{$mobile_breakpoint}{
+        display: block;
+    }
+}
 .card-footer {
     padding: 32px;
 }
-
+.card-included {
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    text-align: center;
+    
+    @media #{$tablet_breakpoint}{
+        display: block;    
+    }
+}
 .card-disclaimer {
     color: $text_disclaimer;
     font-size: 14px;
     display: block;
     text-align: center;
+    margin-top: 10px;
+    height: 16px; //force equal height across cards
 }
 
 // Popover 

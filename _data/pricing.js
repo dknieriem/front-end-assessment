@@ -10,6 +10,7 @@ module.exports = [
                 "button_link": "#",
                 "button_style": "primary",
                 "disclaimer": "No credit card required",
+                "included_link": "See what's included",
             },
             {
                 "color": "blue",
@@ -20,6 +21,7 @@ module.exports = [
                 "button_link": "#",
                 "button_style": "primary",
                 "disclaimer": "No credit card required",
+                "included_link": "See what's included",
             },
             {
                 "color": "green",
@@ -29,6 +31,7 @@ module.exports = [
                 "button": "Talk to sales",
                 "button_link": "#",
                 "button_style": "ghost",
+                "included_link": "See what's included",
             },
             {
                 "color": "charcoal",
@@ -38,6 +41,7 @@ module.exports = [
                 "button": "Talk to sales",
                 "button_link": "#",
                 "button_style": "ghost",
+                "included_link": "See what's included",
             },
         ]
     },

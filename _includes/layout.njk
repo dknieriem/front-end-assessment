@@ -39,6 +39,7 @@ title: Page
             <nav class="hamburger">
               <a class="hamburger-switch" tabindex="0">{{ '/_includes/img/nav-burger.svg' | svgContents | safe }}</a>
               <div class="hamburger-menu">
+                <a class="hamburger-switch" tabindex="0">X</a>
                 <a class="hamburger-item" href="#">Products</a>
                 <a class="hamburger-item" href="#">Pricing</a>
                 <a class="hamburger-item" href="#">Solutions</a>
@@ -49,7 +50,9 @@ title: Page
           </nav>
         </div>
         <div class="content-heading-wrapper">
-          <h1 class="content-heading">{{ page_heading }}</h1>
+          <div class="content-heading">
+            <h1>{{ page_heading }}</h1>
+          </div>
         </div>
       </div>
       <div class="page-content-wrapper">

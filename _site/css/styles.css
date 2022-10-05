@@ -51,6 +51,10 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+body, .popover-content .popover-text {
+  margin: 0;
+}
+
 .page-wrapper {
   background-color: #FAF9F9;
 }
@@ -60,7 +64,12 @@ a:hover, a:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 160px;
+  padding: 0 60px 160px;
+}
+@media screen and (max-width:480px) {
+  .page-header-wrapper {
+    padding: 0 16px 160px;
+  }
 }
 
 .page-header {
@@ -74,7 +83,7 @@ a:hover, a:focus {
   width: 100%;
   max-width: 1128px;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:980px) {
   .page-header {
     padding-top: 16px;
     padding-bottom: 17px;
@@ -93,14 +102,19 @@ a:hover, a:focus {
 .logo-container {
   height: 31px;
 }
+@media screen and (max-width:480px) {
+  .logo-container {
+    height: 18px;
+  }
+}
 
 nav.main {
-  flex-grow: 1;
   display: flex;
   align-items: center;
-  margin-left: 12%;
+  margin-left: auto;
+  margin-right: auto;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:980px) {
   nav.main {
     display: none;
   }
@@ -116,11 +130,14 @@ nav.contextual {
 nav.contextual .nav-item:not(:last-child) {
   margin-right: 16px;
 }
+nav.contextual .button.mobile {
+  padding: 8px 16px;
+}
 
 nav.hamburger {
   display: none;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:980px) {
   nav.hamburger {
     display: inline;
   }
@@ -130,24 +147,59 @@ nav.hamburger .hamburger-switch {
 }
 nav.hamburger .hamburger-menu {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 nav.hamburger .hamburger-menu.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+nav.hamburger .hamburger-menu .hamburger-switch {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #2C2C2C;
+  font-size: 32px;
 }
 nav.hamburger .hamburger-item {
+  background-color: #FFFFFF;
   display: inline-block;
+  border-bottom: 1px solid #CBCFCF;
+  padding: 16px 32px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2C2C2C;
 }
 
 .content-heading-wrapper {
   background-color: #FFFFFF;
   width: 100%;
   max-width: 1128px;
-  margin-bottom: 24px;
+  margin-top: 58px;
+  margin-bottom: 98px;
+}
+@media screen and (max-width:980px) {
+  .content-heading-wrapper {
+    width: unset;
+    margin-bottom: 88px;
+  }
+}
+@media screen and (max-width:480px) {
+  .content-heading-wrapper {
+    margin-left: 24px;
+  }
 }
 
 .content-heading {
+  width: 100%;
+}
+.content-heading h1 {
   max-width: 745px;
   margin: 0;
 }
@@ -159,17 +211,39 @@ nav.hamburger .hamburger-item {
   align-items: center;
   margin-top: -154px;
 }
+@media screen and (max-width:980px) {
+  .page-content-wrapper {
+    margin-top: -145px;
+  }
+}
 
 .page-content {
-  width: 100%;
   max-width: 1128px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 60px;
+  margin-bottom: 200px;
+}
+@media screen and (max-width:980px) {
+  .page-content {
+    width: unset;
+  }
+}
+@media screen and (max-width:480px) {
+  .page-content {
+    padding: 0 40px;
+  }
 }
 
 .card-section {
   width: 100%;
+}
+
+@media screen and (max-width:480px) {
+  .section-title {
+    display: none;
+  }
 }
 
 .card-container {
@@ -178,7 +252,7 @@ nav.hamburger .hamburger-item {
   column-gap: 24px;
   row-gap: 32px;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:980px) {
   .card-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -194,6 +268,20 @@ nav.hamburger .hamburger-item {
   border: 1px solid #CBCFCF;
   box-shadow: 0px 4px 30px rgba(84, 86, 90, 0.1);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width:480px) {
+  .card:not(.has-image) {
+    border: none;
+    box-shadow: none;
+    background: none;
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  .card:not(.has-image) .card-header {
+    border-radius: 0;
+  }
 }
 
 .card-header {
@@ -203,17 +291,17 @@ nav.hamburger .hamburger-item {
   flex-direction: row;
   align-items: center;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:980px) {
   .card-header {
     height: unset;
   }
 }
-.card-header.has-image {
+.card.has-image > .card-header {
   height: 154px;
   justify-content: center;
 }
-@media screen and (max-width:768px) {
-  .card-header.has-image {
+@media screen and (max-width:980px) {
+  .card.has-image > .card-header {
     height: 144px;
   }
 }
@@ -244,7 +332,7 @@ nav.hamburger .hamburger-item {
 .card-header h4 {
   display: none;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:980px) {
   .card-header h4 {
     display: block;
     margin: 14px 0 18px 32px;
@@ -252,10 +340,32 @@ nav.hamburger .hamburger-item {
 }
 .card-body {
   padding: 32px 32px 44px;
+  flex-grow: 1;
+}
+
+.borrowed-title {
+  display: none;
+}
+@media screen and (max-width:480px) {
+  .borrowed-title {
+    display: block;
+  }
 }
 
 .card-footer {
   padding: 32px;
+}
+
+.card-included {
+  display: none;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+@media screen and (max-width:980px) {
+  .card-included {
+    display: block;
+  }
 }
 
 .card-disclaimer {
@@ -263,6 +373,8 @@ nav.hamburger .hamburger-item {
   font-size: 14px;
   display: block;
   text-align: center;
+  margin-top: 10px;
+  height: 16px;
 }
 
 .popover {
